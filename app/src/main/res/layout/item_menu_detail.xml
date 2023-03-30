@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:gravity="top"
+    android:minWidth="200dp"
+    android:maxWidth="200dp"
+
+    android:layout_marginBottom="@dimen/normal"
+    android:layout_marginRight="@dimen/normal"
+    android:background="@drawable/shape_detail_menu"
+    >
+    <ImageView
+        android:id="@+id/gambarMenu"
+        android:layout_width="match_parent"
+                android:layout_height="144dp"
+        android:scaleType="fitXY"
+        android:layout_marginBottom="10dp"
+        />
+
+    <TextView
+        android:layout_marginHorizontal="2dp"
+        android:id="@+id/judulMenu"
+        android:layout_width="wrap_content"
+       android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"/>
+
+
+</LinearLayout>
