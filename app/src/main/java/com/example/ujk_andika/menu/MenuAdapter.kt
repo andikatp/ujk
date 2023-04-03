@@ -10,14 +10,18 @@ import com.squareup.picasso.Picasso
 
 
 class MenuAdapter(val menu: List<Menu?>?): RecyclerView.Adapter<MenuAdapter.MyHolder>(){
-
-    class MyHolder(itemView: View): RecyclerView.ViewHolder(itemView){
+    private var onItemCallBackListener: OnItemCallBackListener? = null
+    inner class MyHolder(itemView: View): RecyclerView.ViewHolder(itemView){
 
 
 
         fun bind(menu: Menu?){
             Picasso.get().load("http://172.10.10.90" + java.net.URLDecoder.decode(menu?.foto)).into(itemView.findViewById<ImageView>(R.id.gambarMenu))
             itemView.findViewById<TextView>(R.id.judulMenu).text =menu?.menu.toString().uppercase()
+
+            itemView.setOnClickListener {
+                onItemCallBackListener?.move(menu!!)
+            }
         }
     }
 
@@ -33,4 +37,19 @@ class MenuAdapter(val menu: List<Menu?>?): RecyclerView.Adapter<MenuAdapter.MyHo
     override fun onBindViewHolder(holder: MyHolder, position: Int) {
        holder.bind(menu?.get(position))
     }
+
+
+    fun detailMenuClicked(onTap: (menu: Menu) -> Unit){
+        onItemCallBackListener = object : OnItemCallBackListener{
+            override fun move(menu: Menu) {
+                onTap(menu)
+            }
+
+        }
+
+    }
+    interface OnItemCallBackListener{
+        fun move(menu: Menu)
+    }
+
 }

@@ -5,14 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MenuActivity">
+    tools:context=".menu.MenuActivity">
 
     <Button
         android:id="@+id/btMakanan"
         android:layout_width="330dp"
         android:layout_height="80dp"
         android:layout_marginTop="180dp"
-        android:backgroundTint="#F44336"
         android:text="Makanan"
         app:iconTint="#E91E63"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +23,6 @@
         android:id="@+id/btMinuman"
         android:layout_width="330dp"
         android:layout_height="80dp"
-        android:backgroundTint="#F44336"
         android:text="Minuman"
         app:layout_constraintBottom_toTopOf="@+id/btDessert"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,7 +35,6 @@
         android:layout_width="330dp"
         android:layout_height="80dp"
         android:layout_marginBottom="180dp"
-        android:backgroundTint="#F44336"
         android:text="Dessert"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

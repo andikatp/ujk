@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    android:padding="20dp"
+    tools:context=".pesanan.PesananActivity">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvPesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        android:paddingBottom="20dp"
+        tools:listitem="@layout/item_pesanan"/>
+
+    <Button
+        android:id="@+id/btnTambahPesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="TAMBAH MENU"
+        android:layout_marginTop="40dp"/>
+    <TextView
+        android:id="@+id/totalPesanan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAlignment="center"
+        android:layout_marginTop="40dp"/>
+    <Button
+        android:id="@+id/btnKirimPesanan"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="KIRIM"
+        android:layout_marginTop="40dp"/>
+
+</LinearLayout>

@@ -1,6 +1,7 @@
 package com.example.ujk_andika.menu
 
 import MenuAdapter
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MenuItem
@@ -15,6 +16,7 @@ class MenuActivityDetail : AppCompatActivity() , MenuView {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu_detail)
 
+
         val intent = getIntent()
         kategori = intent.getStringExtra("kategori").toString()
 
@@ -26,7 +28,15 @@ class MenuActivityDetail : AppCompatActivity() , MenuView {
     }
 
     override fun onSuccessDataMenu(menu: List<Menu?>?) {
-       findViewById<RecyclerView>(R.id.ListMenu).adapter = MenuAdapter(menu)
+       findViewById<RecyclerView>(R.id.ListMenu).adapter = MenuAdapter(menu).apply {
+           detailMenuClicked {
+               val intent = Intent(this@MenuActivityDetail, DetailActivity::class.java).apply {
+                  putExtra("menu", it)
+               }
+               startActivity( intent)
+
+           }
+       }
 
 
     }

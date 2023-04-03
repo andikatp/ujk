@@ -13,8 +13,7 @@
         android:layout_marginStart="8dp"
         android:layout_marginTop="180dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#F44336"
-        android:text="Menu"
+                android:text="Menu"
         app:iconTint="#E91E63"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -26,7 +25,6 @@
         android:layout_height="80dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
-        android:backgroundTint="#F44336"
         android:text="Pesanan"
         app:layout_constraintBottom_toTopOf="@+id/btDapur"
         app:layout_constraintEnd_toEndOf="parent"
@@ -41,10 +39,11 @@
         android:layout_marginStart="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="180dp"
-        android:backgroundTint="#F44336"
         android:text="Dapur"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

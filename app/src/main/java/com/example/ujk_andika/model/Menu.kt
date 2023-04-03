@@ -1,7 +1,10 @@
 package com.example.ujk_andika.model
 
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Menu(
 
 	@field:SerializedName("id_menu")
@@ -21,4 +24,4 @@ data class Menu(
 
 	@field:SerializedName("menu")
 	val menu: String? = null
-)
+):Parcelable

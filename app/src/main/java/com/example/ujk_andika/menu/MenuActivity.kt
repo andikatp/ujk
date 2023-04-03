@@ -1,10 +1,10 @@
-package com.example.ujk_andika
+package com.example.ujk_andika.menu
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import com.example.ujk_andika.menu.MenuActivityDetail
+import com.example.ujk_andika.R
 
 class MenuActivity : AppCompatActivity() {
     lateinit var btMakanan:Button
