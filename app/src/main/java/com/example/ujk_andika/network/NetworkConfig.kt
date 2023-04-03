@@ -13,7 +13,7 @@ object NetworkConfig {
     }
 
     fun getRetrofit(): Retrofit {
-        return Retrofit.Builder().baseUrl("http://172.10.10.90/UJK_ANDIKA/").client(
+        return Retrofit.Builder().baseUrl("http://192.168.100.150/UJK_ANDIKA/").client(
             getInterceptop()
         ).addConverterFactory(GsonConverterFactory.create()).build()
     }

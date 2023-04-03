@@ -2,7 +2,7 @@ package com.example.ujk_andika.tambahpesanan
 
 
 import android.util.Log
-import com.example.ujk_andika.model.MenuCafe
+import com.example.ujk_andika.model.Menu
 import com.example.ujk_andika.network.NetworkConfig
 import retrofit2.Call
 import retrofit2.Callback
@@ -18,7 +18,6 @@ class TambahPesananPresenter(val tambahPesananView: TambahPesananView) {
                     response: Response<MenuResultCafe>
                 ) {
                     val body = response.body()
-                    Log.d("body", body.toString())
                     tambahPesananView.onSuccessTambahPesanan(body?.menuCafes)
                 }
 
@@ -28,11 +27,15 @@ class TambahPesananPresenter(val tambahPesananView: TambahPesananView) {
             }
             )
     }
-    fun tambahPesanan(nomeja:String, menu: MenuCafe){
+
+    fun tambahPesanan(nomeja: String, menu: Menu) {
         NetworkConfig.service()
             .tambahItemPesanan(nomeja, menu.idMenu)
-            .enqueue(object :Callback<ResultSimple>{
-                override fun onResponse(call: Call<ResultSimple>, response: Response<ResultSimple>) {
+            .enqueue(object : Callback<ResultSimple> {
+                override fun onResponse(
+                    call: Call<ResultSimple>,
+                    response: Response<ResultSimple>
+                ) {
                     val body = response.body()
                     tambahPesananView.onSuccessTambahItemPesanan(body?.message)
                 }
@@ -41,7 +44,8 @@ class TambahPesananPresenter(val tambahPesananView: TambahPesananView) {
                     tambahPesananView.onErrorTambahItemPesanan(t.localizedMessage)
                 }
 
-            })
+            }
+            )
     }
 
 }

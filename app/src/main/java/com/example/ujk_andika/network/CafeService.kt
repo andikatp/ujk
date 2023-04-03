@@ -31,4 +31,12 @@ interface CafeService {
     fun tambahItemPesanan(@Field("nomeja") nomeja:String?,
                           @Field("id_menu") id_menu:Int?
     ): Call<ResultSimple>
+
+    @FormUrlEncoded
+    @POST("dapur/dapur.php")
+    fun getDapur(@Field("nomeja") nomeja:String?): Call<PesananResult>
+
+    @FormUrlEncoded
+    @POST("pesanan/deletepesanan.php")
+    fun deletePesanan(@Field("id_pesanan") id_pesanan:Int?):Call<ResultSimple>
 }

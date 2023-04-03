@@ -9,11 +9,11 @@ import retrofit2.Response
 
 
 class MenuPresenter(val menuView: MenuView) {
-    fun getMenu(kategori: String){
+    fun getMenu(kategori: String) {
         NetworkConfig.service().getMenuDetail(kategori).enqueue(object : Callback<MenuResult> {
             override fun onResponse(call: Call<MenuResult>, response: Response<MenuResult>) {
                 val body = response.body()
-                if(body?.status == "200"){
+                if (body?.status == "200") {
                     menuView.onSuccessDataMenu(body.menu)
                 } else {
                     menuView.onErrorDataMenu(body?.message)
@@ -24,6 +24,7 @@ class MenuPresenter(val menuView: MenuView) {
                 menuView.onErrorDataMenu(t.localizedMessage)
             }
 
-        })
+        }
+        )
     }
 }

@@ -16,9 +16,8 @@ class MenuAdapter(val menu: List<Menu?>?): RecyclerView.Adapter<MenuAdapter.MyHo
 
 
         fun bind(menu: Menu?){
-            Picasso.get().load("http://172.10.10.90" + java.net.URLDecoder.decode(menu?.foto)).into(itemView.findViewById<ImageView>(R.id.gambarMenu))
+            Picasso.get().load("http://192.168.100.150" + java.net.URLDecoder.decode(menu?.foto)).into(itemView.findViewById<ImageView>(R.id.gambarMenu))
             itemView.findViewById<TextView>(R.id.judulMenu).text =menu?.menu.toString().uppercase()
-
             itemView.setOnClickListener {
                 onItemCallBackListener?.move(menu!!)
             }
@@ -44,10 +43,9 @@ class MenuAdapter(val menu: List<Menu?>?): RecyclerView.Adapter<MenuAdapter.MyHo
             override fun move(menu: Menu) {
                 onTap(menu)
             }
-
         }
-
     }
+
     interface OnItemCallBackListener{
         fun move(menu: Menu)
     }

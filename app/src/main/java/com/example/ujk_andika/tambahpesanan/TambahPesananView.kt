@@ -1,9 +1,9 @@
 package com.example.ujk_andika.tambahpesanan
 
-import com.example.ujk_andika.model.MenuCafe
+import com.example.ujk_andika.model.Menu
 
 interface TambahPesananView {
-    fun onSuccessTambahPesanan(data:List<MenuCafe?>?)
+    fun onSuccessTambahPesanan(data:List<Menu?>?)
     fun onErrorTambahPesanan(msg:String?)
 
     fun onSuccessTambahItemPesanan(msg:String?)

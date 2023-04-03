@@ -1,7 +1,9 @@
+import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
+import kotlinx.parcelize.Parcelize
 
+@Parcelize
 data class Pesanan(
-
     @field:SerializedName("id_pesanan")
     val idPesanan: Int? = null,
 
@@ -25,4 +27,4 @@ data class Pesanan(
 
     @field:SerializedName("waktu")
     val waktu: String? = null
-)
+):Parcelable

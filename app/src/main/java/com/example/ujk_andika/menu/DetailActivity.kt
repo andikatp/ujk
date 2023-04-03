@@ -33,7 +33,7 @@ class DetailActivity : AppCompatActivity() {
         }
 
         menu?.let {
-            Picasso.get().load("http://172.10.10.90" + java.net.URLDecoder.decode(it.foto)).into(findViewById<ImageView>(R.id.ivImage))
+            Picasso.get().load("http://192.168.100.150" + java.net.URLDecoder.decode(it.foto)).into(findViewById<ImageView>(R.id.ivImage))
             tvNama.text = it.menu
             tvDeskripsi.text = it.deskripsi
             tvHarga.text = it.harga

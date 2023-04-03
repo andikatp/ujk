@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.ujk_andika.dapur.DapurActivity
 import com.example.ujk_andika.menu.MenuActivity
 import com.example.ujk_andika.pesanan.MejaActivity
 
@@ -21,6 +22,7 @@ class MainActivity : AppCompatActivity() {
         btDapur = findViewById(R.id.btDapur)
         menu()
         pesanan()
+        dapur()
     }
 
     private fun menu() {
@@ -37,5 +39,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun dapur(){
+        btDapur.setOnClickListener {
+            val intent = Intent(this, DapurActivity::class.java)
+            startActivity(intent)
+        }
+    }
 
 }
